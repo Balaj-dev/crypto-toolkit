@@ -1,0 +1,31 @@
+crypto-toolkit/
+│
+├── crypto_core/                 # All encryption + hashing code lives here
+│   ├── __init__.py
+│   ├── base64_tools.py
+│   ├── hashing.py
+│   ├── salting.py
+│   ├── aes_tools.py             # AES / Fernet encryption
+│   ├── rsa_tools.py             # RSA encryption (optional, good for portfolio)
+│   └── utils.py                 # shared helper functions
+│
+├── cli/
+│   ├── __init__.py
+│   └── cli.py                   # main CLI entry point (argparse/click)
+│
+├── webapp/
+│   ├── __init__.py
+│   ├── app.py                   # Flask app
+│   ├── routes.py                # encryption endpoints
+│   └── templates/
+│       ├── index.html
+│       └── result.html
+│
+├── tests/
+│   ├── test_base64.py
+│   ├── test_hashing.py
+│   └── test_aes.py              # even 1–2 tests look professional
+│
+├── requirements.txt
+├── README.md
+└── LICENSE                      # optional but professional
