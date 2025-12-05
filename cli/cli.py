@@ -1,4 +1,4 @@
 import encoding as encode
 
-print(encode.base32_encoding("meow"))
+print(encode.base64_encoding(input("enter something to encode in Base32 format: ")))
 
