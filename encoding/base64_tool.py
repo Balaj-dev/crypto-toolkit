@@ -13,3 +13,4 @@ def base64_decoding(data_by_user):
     encoded_string = encoded_bytes.decode("ascii")
     return encoded_string
 
+

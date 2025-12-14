@@ -1,27 +1,22 @@
 import pyfiglet , argparse
-# import encoding as encode
+from encoding import *
 
-
-# tool_name = pyfiglet.figlet_format("Crypto-Toolkit", font="Standard")
-# print(tool_name)
-# print(encode.base64_encoding(input("enter something to encode in Base32 format: ")))
-
-parser = argparse.ArgumentParser(
-            prog='cyber-Toolkit',
-            description='can turn your data into any from of encryption or hashes')
-parser.add_argument('-e','--encode',help='encode the data',
-                     choices=["b64", "b32"])
-
-
-
+tool_name = pyfiglet.figlet_format("Crypto-Toolkit", font="Standard")
+print(tool_name)
 
 if __name__ == '__main__':
-    args = parser.parse_args()
-
-    if args.encode:
-        if args.b64:
-            print("Base64 encoding")
-        elif args.b32:
-            print("Base32 encoding")
-        else:
-            parser.error("-e requires -b64 or -b32")
+    read_from = input("what you want 32 , 63 , morse, hexa : ")
+    if read_from == 32:
+        data = input("enter to encode: ")
+        print(base32_encoding(data))
+    elif read_from == 64:
+        data = input("enter to encode: ")
+        print(base64_encoding(data))
+    elif read_from == 'morse':
+        data = input("enter to encode: ")
+        print(encode_to_morse(data))
+    elif read_from == 'hexa':
+        data = input("enter to encode: ")
+        print(encode_hex(data))
+    else:
+        pass

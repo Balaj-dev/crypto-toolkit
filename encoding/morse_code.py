@@ -21,12 +21,7 @@ MORSE_CODE_DICT = {
 MORSE_TO_CHAR = {morse: char for char, morse in MORSE_CODE_DICT.items()}
 
 def encode_to_morse(text, letter_sep=' ', word_sep=' / '):
-    """
-    Encode plain text to Morse code.
-    - letter_sep: separator between letters (default: single space)
-    - word_sep: separator between words (default: ' / ')
-    Unknown characters are ignored.
-    """
+
     words = text.upper().split()
     encoded_words = []
     for w in words:
