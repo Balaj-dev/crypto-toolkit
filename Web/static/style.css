@@ -11,18 +11,19 @@ html, body {
     background: #0f1220;
     color: #e6e6eb;
     display: flex;
-
     flex-direction: column;
 }
+
 #main_section{
-     display: grid;
-    grid-template-columns: 1fr 0.5fr 1.5fr; /* sidebar | option_area | result_area */
-    flex: 1; /* fills remaining vertical space */
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1.5fr;
+    flex: 1;
     height: 100%;
 }
+
 /* ====== Header ====== */
 #top_header {
-    height: 200px;
+    height: 140px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,14 +33,6 @@ html, body {
 
 #top_header h1 {
     font-size: 2.2rem;
-}
-
-/* ====== Main Grid Layout ====== */
-#main_grid {
-    display: grid;
-    grid-template-columns: 400px 1fr 2fr; /* sidebar | options | result */
-    flex: 1; /* fills remaining vertical space */
-    height: 100vh;
 }
 
 /* ====== Sidebar ====== */
@@ -96,7 +89,7 @@ html, body {
     flex-direction: column;
     gap: 1rem;
     height: 100%;
-    overflow-y: 100vh;
+    overflow-y: auto;
 }
 
 #encode_decode_buttons {
@@ -121,12 +114,6 @@ html, body {
     border-color: #4c53ff;
 }
 
-#option_area hr {
-    border: none;
-    border-top: 1px solid #242859;
-    margin: 1rem 0;
-}
-
 #option_area label {
     font-size: 0.9rem;
     cursor: pointer;
@@ -134,6 +121,64 @@ html, body {
 
 #option_area input[type="radio"] {
     margin-right: 0.5rem;
+}
+
+/* ====== Encoding / Encryption / Hashing Blocks ====== */
+#encoding_options,
+#encryption_options,
+#hashing_options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#encoding_options p,
+#encryption_options p,
+#hashing_options p {
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+    opacity: 0.85;
+}
+
+/* ====== Config Blocks ====== */
+.config-block {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: #151833;
+    border: 1px solid #242859;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.config-block p {
+    font-size: 0.85rem;
+    opacity: 0.85;
+}
+
+/* ====== Inputs & Selects Inside Config ====== */
+.config-block input[type="text"],
+.config-block input[type="password"],
+.config-block textarea,
+.config-block select {
+    background: #0f1220;
+    border: 1px solid #2d327a;
+    color: #fff;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+.config-block textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* ====== Checkbox Styling ====== */
+.config-block input[type="checkbox"] {
+    margin-right: 0.4rem;
 }
 
 /* ====== Result Area ====== */
@@ -152,14 +197,15 @@ html, body {
     opacity: 0.8;
 }
 
-/* Input and Output Areas */
-.input-area, .output-area {
+.input-area,
+.output-area {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-#input_text, #output_text {
+#input_text,
+#output_text {
     width: 100%;
     min-height: 120px;
     background: #151833;
@@ -171,7 +217,7 @@ html, body {
     font-family: monospace;
 }
 
-/* Submit Button */
+/* ====== Submit Button ====== */
 #submit_btn {
     background: #3c42c9;
     border: 1px solid #4c53ff;
@@ -204,9 +250,8 @@ footer {
 
 /* ====== Responsive ====== */
 @media (max-width: 1100px) {
-    #main_grid {
+    #main_section {
         grid-template-columns: 260px 1fr;
-        grid-template-rows: 1fr;
     }
 
     #result_area {
@@ -216,11 +261,12 @@ footer {
 }
 
 @media (max-width: 700px) {
-    #main_grid {
+    #main_section {
         grid-template-columns: 1fr;
     }
 
-    #side_bar, #option_area {
+    #side_bar,
+    #option_area {
         border-right: none;
         border-bottom: 1px solid #242859;
     }

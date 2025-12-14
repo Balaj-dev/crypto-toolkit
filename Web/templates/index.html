@@ -7,14 +7,17 @@
 </head>
 <body>
 
-    <header id="top_header">
-        <h1>Cyber-Toolkit</h1>
-    </header>
-    <div id="main_section">
+<header id="top_header">
+    <h1>Crypto-Toolkit</h1>
+</header>
+
+<div id="main_section">
+
     <!-- Sidebar -->
     <div class="sidebar" id="side_bar">
         <h2>Welcome to Crypto-Toolkit</h2>
         <p>Choose a tool to start working with text encoding, encryption, or hashing.</p>
+
         <button id="encoding_button" class="tool-btn active">Encoding</button>
         <button id="encryption_button" class="tool-btn">Encryption</button>
         <button id="hashing_button" class="tool-btn">Hashing</button>
@@ -22,19 +25,21 @@
 
     <!-- Options Area -->
     <div id="option_area">
-        <!-- Encode/Decode Buttons -->
+
+        <!-- Encode / Decode -->
         <div id="encode_decode_buttons">
             <button id="encode_btn" class="active">Encode</button>
             <button id="decode_btn">Decode</button>
         </div>
 
-        <!-- Encoding Options -->
+        <!-- ================= ENCODING OPTIONS ================= -->
         <div id="encoding_options">
             <p>Select encoding method:</p>
-            <input type="radio" id="b32_op" name="encoding" value="b32">
+
+            <input type="radio" id="b32_op" name="encoding" value="base32">
             <label for="b32_op">Base32</label><br>
 
-            <input type="radio" id="b64_op" name="encoding" value="b64">
+            <input type="radio" id="b64_op" name="encoding" value="base64">
             <label for="b64_op">Base64</label><br>
 
             <input type="radio" id="hex_op" name="encoding" value="hex">
@@ -44,42 +49,137 @@
             <label for="morse_op">Morse Code</label>
         </div>
 
-        <!-- Encryption Options Placeholder -->
+        <!-- ================= ENCRYPTION OPTIONS ================= -->
         <div id="encryption_options" style="display:none;">
-            <p>Encryption options will appear here.</p>
+            <p>Select encryption method:</p>
+
+            <input type="radio" id="aes_op" name="encryption" value="aes">
+            <label for="aes_op">AES</label><br>
+
+            <input type="radio" id="fernet_op" name="encryption" value="fernet">
+            <label for="fernet_op">Fernet</label><br>
+
+            <input type="radio" id="rsa_op" name="encryption" value="rsa">
+            <label for="rsa_op">RSA</label><br>
+
+            <input type="radio" id="utils_op" name="encryption" value="utils">
+            <label for="utils_op">Encryption Utils</label>
+
+            <!-- AES Settings -->
+            <div class="config-block" id="aes_config" style="display:none;">
+                <p>AES Settings</p>
+                <input type="text" id="aes_key" placeholder="Enter AES Key">
+                <select id="aes_mode">
+                    <option value="cbc">CBC</option>
+                    <option value="ecb">ECB</option>
+                    <option value="gcm">GCM</option>
+                </select>
+            </div>
+
+            <!-- Fernet Settings -->
+            <div class="config-block" id="fernet_config" style="display:none;">
+                <p>Fernet Settings</p>
+                <input type="text" id="fernet_key" placeholder="Enter / Generate Fernet Key">
+            </div>
+
+            <!-- RSA Settings -->
+            <div class="config-block" id="rsa_config" style="display:none;">
+                <p>RSA Settings</p>
+                <textarea id="rsa_public_key" placeholder="Public Key"></textarea>
+                <textarea id="rsa_private_key" placeholder="Private Key"></textarea>
+            </div>
+
+            <!-- Utils Settings -->
+            <div class="config-block" id="utils_config" style="display:none;">
+                <p>Utilities</p>
+                <input type="checkbox" id="key_gen">
+                <label for="key_gen">Generate Secure Key</label><br>
+
+                <input type="checkbox" id="iv_gen">
+                <label for="iv_gen">Generate IV</label>
+            </div>
         </div>
 
-        <!-- Hashing Options Placeholder -->
+        <!-- ================= HASHING OPTIONS ================= -->
         <div id="hashing_options" style="display:none;">
-            <p>Hashing options will appear here.</p>
+            <p>Select hashing method:</p>
+
+            <input type="radio" id="md5_op" name="hashing" value="md5">
+            <label for="md5_op">MD5</label><br>
+
+            <input type="radio" id="sha_op" name="hashing" value="sha">
+            <label for="sha_op">SHA Family</label><br>
+
+            <input type="radio" id="blake2_op" name="hashing" value="blake2">
+            <label for="blake2_op">Blake2</label><br>
+
+            <input type="radio" id="salt_op" name="hashing" value="salt">
+            <label for="salt_op">Salting</label><br>
+
+            <input type="radio" id="pepper_op" name="hashing" value="pepper">
+            <label for="pepper_op">Peppering</label>
+
+            <!-- SHA Settings -->
+            <div class="config-block" id="sha_config" style="display:none;">
+                <p>SHA Type</p>
+                <select id="sha_type">
+                    <option value="sha1">SHA-1</option>
+                    <option value="sha224">SHA-224</option>
+                    <option value="sha256">SHA-256</option>
+                    <option value="sha384">SHA-384</option>
+                    <option value="sha512">SHA-512</option>
+                </select>
+            </div>
+
+            <!-- Blake2 Settings -->
+            <div class="config-block" id="blake2_config" style="display:none;">
+                <p>Blake2 Type</p>
+                <select id="blake2_type">
+                    <option value="blake2b">Blake2b</option>
+                    <option value="blake2s">Blake2s</option>
+                </select>
+            </div>
+
+            <!-- Salting -->
+            <div class="config-block" id="salt_config" style="display:none;">
+                <p>Salting</p>
+                <input type="text" id="salt_value" placeholder="Enter Salt Value">
+            </div>
+
+            <!-- Peppering -->
+            <div class="config-block" id="pepper_config" style="display:none;">
+                <p>Peppering</p>
+                <input type="password" id="pepper_value" placeholder="Enter Secret Pepper">
+            </div>
         </div>
+
     </div>
 
-    <!-- Result Area -->
+    <!-- ================= RESULT AREA ================= -->
     <div id="result_area">
-        <!-- Description -->
-        <p id="result_description">Enter text and select your options to see the result here.</p>
 
-        <!-- Input Area -->
+        <p id="result_description">
+            Enter text and select your options to see the result here.
+        </p>
+
         <div class="input-area">
             <label for="input_text">Input:</label>
             <textarea id="input_text" placeholder="Enter text here..."></textarea>
             <button id="submit_btn">Enter</button>
         </div>
 
-        <!-- Output Area (hidden until result) -->
         <div class="output-area" id="output_area" style="display:none;">
             <label for="output_text">Output:</label>
             <textarea id="output_text" readonly placeholder="Result will appear here..."></textarea>
         </div>
+
     </div>
 
 </div>
 
-    <!-- Footer -->
-    <footer style="text-align:center; margin-top:1rem; font-size:0.85rem; opacity:0.7;">
-        Made with ❤️ by Balaj
-    </footer>
+<footer style="text-align:center; margin-top:1rem; font-size:0.85rem; opacity:0.7;">
+    Made by Balaj
+</footer>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 
