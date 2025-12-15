@@ -19,14 +19,14 @@ crypto-toolkit/
 │   ├── md5_tools.py
 │   ├── blake2_tools.py
 │   ├── salting.py
-│   └── peppering.py             # optional, advanced
+│   └── peppering.py      
 │
 ├── encryption/                  # Symmetric + asymmetric encryption
 │   ├── __init__.py
-│   ├── aes_tools.py             # Symmetric (EASY + recommended)
-│   ├── fernet_tools.py          # Even easier AES wrapper via cryptography
-│   ├── rsa_tools.py             # Asymmetric (optional, advanced)
-│   └── utils.py                 # key generation, file loading, etc.
+│   ├── aes_tools.py             
+│   ├── fernet_tools.py         
+│   ├── rsa_tools.py             
+│   └── utils.py                
 │
 ├── cli/                         # Command line interface
 │   ├── __init__.py
