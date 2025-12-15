@@ -35,11 +35,12 @@ crypto-toolkit/
 ├── web/                         # Flask web app
 │   ├── __init__.py
 │   ├── web.py                   # main Flask runner
-│   ├── routes.py
-│   ├── forms.py                 # optional, for WTForms
+│   ├── static/
+│   │   ├── style.css
+│   │   └── script.js
 │   └── templates/
-│       ├── index.html
-│       └── result.html
+│       └── index.html
+│
 │
 ├── tests/                       # Unit tests
 │   ├── test_encoding.py
