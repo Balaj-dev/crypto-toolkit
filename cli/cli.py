@@ -11,10 +11,10 @@ prases = argparse.ArgumentParser(description="used to convert plain text in to c
 
 if __name__ == '__main__':
     read_from = input("what you want 32 , 63 , morse, hexa : ")
-    if read_from == 32:
+    if read_from == '32':
         data = input("enter to encode: ")
         print(base32_encoding(data))
-    elif read_from == 64:
+    elif read_from == '64':
         data = input("enter to encode: ")
         print(base64_encoding(data))
     elif read_from == 'morse':
