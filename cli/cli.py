@@ -4,6 +4,11 @@ from encoding import *
 tool_name = pyfiglet.figlet_format("Crypto-Toolkit", font="Standard")
 print(tool_name)
 
+print(dir(argparse))
+
+prases = argparse.ArgumentParser(description="used to convert plain text in to cypher text..")
+
+
 if __name__ == '__main__':
     read_from = input("what you want 32 , 63 , morse, hexa : ")
     if read_from == 32:
