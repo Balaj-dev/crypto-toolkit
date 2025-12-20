@@ -10,6 +10,7 @@ def index():
     if request.method == "POST":
         selected_encoding = request.form.get("encoding")
         input_text = request.form.get("text")
+        type = request.form.get("further-type")
 
 
     return render_template(
