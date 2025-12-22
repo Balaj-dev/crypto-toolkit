@@ -44,10 +44,12 @@ def fet_encrypt():
     print("Encrypted token:", token)
 
 def fet_decrypt():
-    text = input("enter the text: ")
-    key = input("enter fernet key: ")
+    token = input("Enter encrypted token: ")
+    key = input("Enter Fernet key: ")
+
     f = Fernet(key)
-    decrypt = f.decrypt(text , key)
+    decrypted = f.decrypt(token)
 
+    return decrypted
 
-
+fet_decrypt()
