@@ -24,19 +24,19 @@ def derive_fernet_key(password: str, salt: bytes = None) -> tuple[bytes, bytes]:
     return key, salt
 
 
-# USER ENTERS PASSWORD (NOT RAW KEY)
-password = input("Enter password: ")
-if password == None:
-    password = Fernet.generate_key()
-else:
-    pass
-# DERIVE FERNET KEY
-key, salt = derive_fernet_key(password)
-# CREATE FERNET OBJECT
-f = Fernet(key)
 
 # ENCRYPT
 def fet_encrypt():
+    # USER ENTERS PASSWORD (NOT RAW KEY)
+    password = input("Enter password: ")
+    if password == None:
+        password = Fernet.generate_key()
+    else:
+        pass
+    # DERIVE FERNET KEY
+    key, salt = derive_fernet_key(password)
+    # CREATE FERNET OBJECT
+    f = Fernet(key)
     print("Derived key:", key)
     print("Salt (store this):", salt)
     text = input("Enter text to encrypt: ")
