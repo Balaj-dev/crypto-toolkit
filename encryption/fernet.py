@@ -52,4 +52,3 @@ def fet_decrypt():
 
     return decrypted
 
-fet_decrypt()
