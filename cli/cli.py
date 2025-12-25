@@ -30,9 +30,9 @@ parser.add_argument('-v', '--verbose',
 #         print(encode_hex(data))
 #     else:
 #         pass
-
-user = input("")
-if user == 'e':
-    fet_encrypt()
-else:
-    fet_decrypt()
+#
+# user = input("")
+# if user == 'e':
+#     fet_encrypt()
+# else:
+#     fet_decrypt()
