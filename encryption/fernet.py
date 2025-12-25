@@ -46,10 +46,11 @@ def fet_encrypt():
 def fet_decrypt():
     token = input("Enter encrypted token: ")
     key = input("Enter Fernet key: ")
-    if token or key == None:
-        print("these input must be filled!")
-    else:
-        f = Fernet(key)
-        decrypted = f.decrypt(token)
-        return decrypted
+    # if token or key == 0:
+    #     print("these input must be filled!")
+    # else:
+    f = Fernet(key)
+    decrypted = f.decrypt(token)
+    print(decrypted)
+    return decrypted
 
