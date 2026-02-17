@@ -34,12 +34,7 @@ def encode_to_morse(text, letter_sep=' ', word_sep=' / '):
     return word_sep.join(encoded_words)
 
 def decode_from_morse(morse_code, letter_sep=' ', word_sep=' / '):
-    """
-    Decode Morse code to plain text.
-    - letter_sep: separator between letters in the morse input
-    - word_sep: separator between words in the morse input
-    Unknown morse sequences are replaced with '?'
-    """
+
     words = morse_code.strip().split(word_sep)
     decoded_words = []
     for w in words:
